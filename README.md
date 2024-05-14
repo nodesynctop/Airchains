@@ -137,5 +137,17 @@ sudo rm -f $(which junctiond)
 sudo rm -rf $HOME/.junction
 sudo rm -rf Junction_auto
 ```
+# 5. Snapshot
+```
+sudo systemctl stop junctiond
+cp $HOME/.junction/data/priv_validator_state.json $HOME/.junction/priv_validator_state.json.backup
+rm -rf $HOME/.junction/data $HOME/.junction/wasmPath
+
+curl https://files.nodesync.top/Junction/junction.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.junction
+
+mv $HOME/.junction/priv_validator_state.json.backup $HOME/.junction/data/priv_validator_state.json
+
+sudo systemctl restart junctiond && sudo journalctl -u junctiond -f --no-hostname -o cat
+```
 
 
