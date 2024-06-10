@@ -11,7 +11,7 @@ Discord: https://discord.gg/airchains
 
 #### Services
 
-Explorer: https://explorer.nodesync.top/Junction-Testnet
+Explorer: https://explorer.nodesync.top/Airchains-Testnet
 
 API: https://junction-testnet-api.nodesync.top
 
